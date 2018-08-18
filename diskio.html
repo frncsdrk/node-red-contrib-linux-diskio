@@ -1,0 +1,34 @@
+<script>
+  RED.nodes.registerType(
+    'diskio',
+    {
+      category: 'diskio',
+      color: '#f5bc80',
+      defaults: {
+        name: {
+          value: ''
+        }
+      },
+      inputs: 1,
+      outputs: 1,
+      icon: 'diskio.png',
+      label: function () {
+        return this.name || 'DiskIO'
+      },
+      oneditprepare: function () {
+        // select defaults
+      }
+    }
+  )
+</script>
+
+<script type="text/x-red" data-template-name="diskio">
+  <div class="form-row">
+    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+</script>
+
+<script type="text/x-red" data-help-name="diskio">
+  <p>A node to monitor system disk io</p>
+</script>

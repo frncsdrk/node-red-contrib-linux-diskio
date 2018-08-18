@@ -1,0 +1,34 @@
+{
+  "name": "node-red-contrib-linux-diskio",
+  "version": "0.1.0",
+  "description": "Collect linux disk io stats",
+  "main": "diskio.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frncsdrk/node-red-contrib-linux-diskio.git"
+  },
+  "keywords": [
+    "node-red",
+    "diskio",
+    "linux",
+    "system",
+    "performance"
+  ],
+  "author": "frncsdrk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frncsdrk/node-red-contrib-linux-diskio/issues"
+  },
+  "homepage": "https://github.com/frncsdrk/node-red-contrib-linux-diskio#readme",
+  "dependencies": {
+    "systeminformation": "^3.42.9"
+  },
+  "node-red"     : {
+    "nodes": {
+      "diskio": "diskio.js"
+    }
+  }
+}
