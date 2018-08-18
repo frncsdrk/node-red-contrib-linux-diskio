@@ -1,7 +1,7 @@
 node-red-contrib-linux-diskio
 ===
 
-Collect linux disk io stats
+> Collect linux disk io stats
 
 ## Credits
 
