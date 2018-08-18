@@ -23,7 +23,7 @@ module.exports = function (RED) {
           node.send([ payloadArr ])
         })
         .catch(err => {
-          node.error('Error', err.message)
+          node.error('SI diskdIO Error', err.message)
         })
     })
   }
