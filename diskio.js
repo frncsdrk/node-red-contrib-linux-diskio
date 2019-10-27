@@ -8,7 +8,8 @@ module.exports = function (RED) {
 
     const node = this
 
-    node.on('input', (msg) => {
+    node.on('input', (msg, send, done) => {
+      send = send || function() { node.send.apply(node,arguments) }
       si.disksIO()
         .then(data => {
           let payloadArr = []
@@ -20,10 +21,17 @@ module.exports = function (RED) {
             payload: data.wIO_sec,
             topic: 'diskio_write_sec'
           })
-          node.send([ payloadArr ])
+          send([ payloadArr ])
+          if (done) {
+            done()
+          }
         })
         .catch(err => {
-          node.error('SI diskdIO Error', err.message)
+          if (done) {
+            done(err)
+          } else {
+            node.error('SI diskdIO Error', err.message)
+          }
         })
     })
   }
