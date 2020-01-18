@@ -7,6 +7,12 @@
       defaults: {
         name: {
           value: ''
+        },
+        readIOsSec: {
+          value: true
+        },
+        writeIOsSec: {
+          value: true
         }
       },
       inputs: 1,
@@ -17,6 +23,13 @@
       },
       oneditprepare: function () {
         // select defaults
+        // IOs
+        if (typeof this.readIOsSec === 'undefined') {
+          $('#node-input-readIOsSec').prop('checked', true)
+        }
+        if (typeof this.writeIOsSec === 'undefined') {
+          $('#node-input-writeIOsSec').prop('checked', true)
+        }
       }
     }
   )
@@ -26,6 +39,16 @@
   <div class="form-row">
     <label for="node-input-name"><i class="icon-tag"></i> Name</label>
     <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+
+  <h4>IOs</h4>
+  <div class="form-row">
+    <label for="node-input-readIOsSec" style="width: auto; margin-right: 1em;"><i class="icon-check"></i> Display read IOs per second</label>
+    <input type="checkbox" id="node-input-readIOsSec" style="display: inline-block; width: auto; vertical-align: top;">
+  </div>
+  <div class="form-row">
+    <label for="node-input-writeIOsSec" style="width: auto; margin-right: 1em;"><i class="icon-check"></i> Display write IOs per second</label>
+    <input type="checkbox" id="node-input-writeIOsSec" style="display: inline-block; width: auto; vertical-align: top;">
   </div>
 </script>
 
