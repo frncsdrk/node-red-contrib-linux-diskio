@@ -1,7 +1,17 @@
-node-red-contrib-linux-diskio
-===
+# node-red-contrib-linux-diskio
 
 > Collect linux disk io stats
+
+## Configuration
+
+### General
+
+- Name
+
+### IOs
+
+- Read IOs / sec
+- Write IOs / sec
 
 ## Copyright info
 
